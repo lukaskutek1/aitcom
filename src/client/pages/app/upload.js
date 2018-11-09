@@ -16,7 +16,7 @@ export default class Upload extends React.Component {
     data.append("file", this.state.selectedFile, this.state.selectedFile.name);
 
     axios
-      .post(endpoint, data, {
+      .post("/api/upload", data, {
         onUploadProgress: ProgressEvent => {
           this.setState({
             loaded: (ProgressEvent.loaded / ProgressEvent.total) * 100
@@ -31,7 +31,12 @@ export default class Upload extends React.Component {
   render() {
     return (
       <div className="App">
-        <input type="file" name="" id="" onChange={this.handleselectedFile} />
+        <input
+          type="file"
+          name="test"
+          id=""
+          onChange={this.handleselectedFile}
+        />
         <button onClick={this.handleUpload}>Upload</button>
         <div> {Math.round(this.state.loaded, 2)} %</div>
       </div>

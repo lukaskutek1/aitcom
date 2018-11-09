@@ -1,8 +1,8 @@
 import express from "express";
 
-//const router = express.Router();
+const router = express.Router();
 
-app.post("/upload", (req, res, next) => {
+router.post("/api/upload", (req, res, next) => {
   let uploadFile = req.files.file;
   const fileName = req.files.file.name;
   uploadFile.mv(`${__dirname}/public/files/${fileName}`, function(err) {
