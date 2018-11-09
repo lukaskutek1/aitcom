@@ -26,7 +26,7 @@ const dev = process.env.NODE_ENV !== "production";
     const MongoStore = connectMongo(session);
 
     mongoose.connect(
-      "mongodb://aitcom:aitcom111@ds155833.mlab.com:55833/aitcom_database",
+      "mongodb://admin:tajneheslo123@ds155833.mlab.com:55833/aitcomdb",
       { useNewUrlParser: true }
     );
 
