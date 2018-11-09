@@ -16,7 +16,7 @@ export default class Upload extends React.Component {
     data.append("file", this.state.selectedFile, this.state.selectedFile.name);
 
     axios
-      .post("/api/upload", data, {
+      .post("/api/v1/upload", data, {
         onUploadProgress: ProgressEvent => {
           this.setState({
             loaded: (ProgressEvent.loaded / ProgressEvent.total) * 100

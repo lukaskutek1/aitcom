@@ -1,6 +1,7 @@
 import next from "next";
 import express from "express";
 import bodyParser from "body-parser";
+import fileUpload from "express-fileupload";
 import mongoose from "mongoose";
 import passport from "passport";
 import connectMongo from "connect-mongo";
@@ -31,6 +32,10 @@ const dev = process.env.NODE_ENV !== "production";
     );
 
     server.use(bodyParser.json());
+    server.use(fileUpload());
+
+    server.use("/public", express.static("public"));
+
     server.use(
       session({
         secret: "1w3q2dasdnjkq8945ppeje",
@@ -57,7 +62,7 @@ const dev = process.env.NODE_ENV !== "production";
       return handle(req, res);
     });
 
-    server.listen(80, err => {
+    server.listen(8000, err => {
       if (err) throw err;
       console.log("Server up! @80.211.116.187:80 "); // eslint-disable-line no-console
     });
