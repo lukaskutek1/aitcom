@@ -57,9 +57,9 @@ const dev = process.env.NODE_ENV !== "production";
       return handle(req, res);
     });
 
-    server.listen(8080, err => {
+    server.listen(80, err => {
       if (err) throw err;
-      console.log("Server up! @80.211.116.187:8080 "); // eslint-disable-line no-console
+      console.log("Server up! @80.211.116.187:80 "); // eslint-disable-line no-console
     });
   } catch (err) {
     console.error(err.stack); // eslint-disable-line no-console
